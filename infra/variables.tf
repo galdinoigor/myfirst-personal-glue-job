@@ -1,0 +1,19 @@
+variable "raw_data_bucket_name" {
+    description = "Bucket for RAW data file"
+    type = string
+}
+
+variable "trusted_data_bucket_name" {
+    description = "Bucket for TRUSTED data file (target)"
+    type = string
+}
+
+variable "script_location_bucket_name" {
+    description = "Bucket for Glue Job Python Script"
+    type = string
+}
+
+variable "glue_job_role_arn" {
+    description = "IAM Role ARN for Glue Job"
+    type = string
+}
