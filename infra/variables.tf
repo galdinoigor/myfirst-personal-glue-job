@@ -17,3 +17,8 @@ variable "glue_job_role_arn" {
     description = "IAM Role ARN for Glue Job"
     type = string
 }
+
+variable "region" {
+    description = "AWS Region"
+    type = string
+}
