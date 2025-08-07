@@ -18,6 +18,6 @@ jobs:
       aws-region: "sa-east-1"
       aws-statefile-s3-bucket: "bucket-galdinoigor-firstgluejob-statefile"
       aws-lock-dynamodb-table: "dynamodb-table-firstgluejob-terraform-lock"
-
+      aws-script-s3-bucket: "bucket-galdinoigor-firstgluejob-dev-scripts"
 
       

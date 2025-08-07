@@ -6,6 +6,10 @@ resource "aws_s3_bucket" "trusted_bucket" {
   bucket = var.trusted_data_bucket_name
 }
 
+resource "aws_s3_bucket" "script_bucket" {
+  bucket = var.script_location_bucket_name
+}
+
 resource "aws_glue_job" "glue_job" {
   name     = "my-first-gluejob-s3-to-s3"
   role_arn = var.glue_job_role_arn 

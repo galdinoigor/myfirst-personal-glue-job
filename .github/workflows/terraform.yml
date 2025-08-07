@@ -18,6 +18,7 @@ on:
       aws-lock-dynamodb-table:
         type: string
         required: true
+      
 
 jobs:
   terraform:
@@ -70,5 +71,4 @@ jobs:
 
     - name: Upload Glue Script to S3
       run: |
-        aws s3 cp gluejob/trusted_s3_to_s3.py s3://my-personal-glue-bucket/scripts/
-
+        aws s3 cp gluejob/trusted_s3_to_s3.py s3://${{ inputs.aws-script-s3-bucket }}
