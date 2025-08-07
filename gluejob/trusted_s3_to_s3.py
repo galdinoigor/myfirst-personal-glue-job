@@ -32,7 +32,8 @@ df_brazil_grouped_wins = df_brazil_matches.groupBy("year").agg(
     ).otherwise(0)).alias("count_win")
 )
 
-df_brazil_grouped_wins.write.mode("overwrite") \
+df_brazil_grouped_wins.write \
+    .mode("overwrite") \
     .option("header", True) \
     .csv(trusted_bucket)
 
