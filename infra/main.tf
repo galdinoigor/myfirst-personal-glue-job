@@ -18,5 +18,5 @@ resource "aws_glue_job" "glue_job" {
 
   glue_version      = "4.0"
   number_of_workers = 2
-  worker_type       = "G.0X"
+  worker_type       = "G.1X"
 }
