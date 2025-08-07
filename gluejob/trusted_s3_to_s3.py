@@ -1,4 +1,3 @@
-import sys
 from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
@@ -23,7 +22,7 @@ df_brazil_matches = df_int_matches.filter((F.col("home_team") == "Brazil") | (F.
 
 df_brazil_matches = df_brazil_matches.select("date", "home_team", "away_team", "home_team_result")
 
-df_brazil_matches = df_brazil_matches.withColumn("year", year(df["date"]))
+df_brazil_matches = df_brazil_matches.withColumn("year", year(df_brazil_matches["date"]))
 
 df_brazil_grouped_wins = df_brazil_matches.groupBy("year").agg(
     F.sum(F.when(
