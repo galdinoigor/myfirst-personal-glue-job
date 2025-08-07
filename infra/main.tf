@@ -16,7 +16,7 @@ resource "aws_glue_job" "glue_job" {
 
   command {
     name            = "glueetl"
-    script_location = "s3://${var.script_location_bucket_name}"
+    script_location = "s3://${var.script_location_bucket_name}/trusted_s3_to_s3.py"
     python_version  = "3"
   }
 
