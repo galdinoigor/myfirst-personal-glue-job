@@ -18,7 +18,9 @@ on:
       aws-lock-dynamodb-table:
         type: string
         required: true
-      
+      aws-script-s3-bucket:
+        type: string
+        required: true
 
 jobs:
   terraform:
