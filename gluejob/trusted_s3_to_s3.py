@@ -11,8 +11,8 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 
-raw_bucket_filefullpath = "s3://bucket-galdinoigor-firstgluejob-raw-data/international_matches.csv"
-trusted_bucket = "s3://bucket-galdinoigor-firstgluejob-trusted-data/"
+raw_bucket_filefullpath = "s3://bucket-galdinoigor-firstgluejob-dev-raw-data/international_matches.csv"
+trusted_bucket = "s3://bucket-galdinoigor-firstgluejob-dev-trusted-data/"
 
 df_int_matches = spark.read \
     .option("header", "true") \
