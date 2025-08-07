@@ -1,5 +1,5 @@
 raw_data_bucket_name            = "bucket-galdinoigor-firstgluejob-dev-raw-data"
 trusted_data_bucket_name        = "bucket-galdinoigor-firstgluejob-dev-trusted-data"
-script_location_bucket_name     = "bucket-galdinoigor-firstgluejob-dev-scripts"
+script_location_bucket_name     = "s3://bucket-galdinoigor-firstgluejob-dev-scripts"
 glue_job_role_arn               = "arn:aws:iam::738140882659:role/my-glue-role"
 region                          = "sa-east-1"
