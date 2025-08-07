@@ -70,5 +70,5 @@ jobs:
 
     - name: Upload Glue Script to S3
       run: |
-        aws s3 cp glue_job/extract_api_to_s3.py s3://my-personal-glue-bucket/scripts/
+        aws s3 cp glue_job/trusted_s3_to_s3.py s3://my-personal-glue-bucket/scripts/
 
