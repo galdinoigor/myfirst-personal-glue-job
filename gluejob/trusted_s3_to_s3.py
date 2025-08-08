@@ -12,7 +12,7 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 
-args = getResolvedOptions(sys.argv, ['RAW_BUCKET_PATH', 'TRUSTED_BUCKET_PATH'])
+args = getResolvedOptions(sys.argv, ['RAW_BUCKET_PATH', 'TRUSTED_BUCKET_PATH', 'TRUSTED_SUBFOLDER'])
 raw_bucket_filefullpath = args['RAW_BUCKET_PATH']
 
 trusted_bucket = args['TRUSTED_BUCKET_PATH']
