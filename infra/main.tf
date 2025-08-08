@@ -28,7 +28,7 @@ resource "aws_glue_job" "glue_job" {
     "--enable-metrics"                 = "true"
     "--enable-glue-datacatalog"        = "true"
     "--continuous-log-logGroup"        = "/aws-glue/jobs/output"
-    "--continuous-log-logStreamPrefix" = "glue-job-logs
+    "--continuous-log-logStreamPrefix" = "glue-job-logs"
   }
 
   glue_version      = "4.0"
