@@ -21,9 +21,14 @@ resource "aws_glue_job" "glue_job" {
   }
 
   default_arguments = {
-    "--RAW_BUCKET_PATH"     = "${var.raw_data_bucket_name}/${var.raw_file_name}"
-    "--TRUSTED_BUCKET_PATH" = var.trusted_data_bucket_name
-    "--TRUSTED_SUBFOLDER"   = var.trusted_folder_name
+    "--RAW_BUCKET_PATH"                = "s3://${var.raw_data_bucket_name}/${var.raw_file_name}"
+    "--TRUSTED_BUCKET_PATH"            = "s3://${var.trusted_data_bucket_name}"
+    "--TRUSTED_SUBFOLDER"              = var.trusted_folder_name
+    "--enable-continuous-logging"      = "true"
+    "--enable-metrics"                 = "true"
+    "--enable-glue-datacatalog"        = "true"
+    "--continuous-log-logGroup"        = "/aws-glue/jobs/output"
+    "--continuous-log-logStreamPrefix" = "glue-job-logs
   }
 
   glue_version      = "4.0"
