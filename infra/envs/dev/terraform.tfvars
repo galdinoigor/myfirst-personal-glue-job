@@ -1,5 +1,7 @@
+region                          = "sa-east-1"
 raw_data_bucket_name            = "bucket-galdinoigor-firstgluejob-dev-raw-data"
+raw_file_name                   = "international_matches.csv"
 trusted_data_bucket_name        = "bucket-galdinoigor-firstgluejob-dev-trusted-data"
+trusted_folder_name             = "brazil_grouped_wins"
 script_location_bucket_name     = "bucket-galdinoigor-firstgluejob-dev-scripts"
 glue_job_role_arn               = "arn:aws:iam::738140882659:role/my-glue-role"
-region                          = "sa-east-1"

@@ -1,3 +1,5 @@
+from awsglue.utils import getResolvedOptions
+import sys
 from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
@@ -10,8 +12,15 @@ glueContext = GlueContext(sc)
 spark = glueContext.spark_session
 job = Job(glueContext)
 
-raw_bucket_filefullpath = "s3://bucket-galdinoigor-firstgluejob-dev-raw-data/international_matches.csv"
-trusted_bucket = "s3://bucket-galdinoigor-firstgluejob-dev-trusted-data/"
+args = getResolvedOptions(sys.argv, ['RAW_BUCKET_PATH', 'TRUSTED_BUCKET_PATH'])
+raw_bucket_filefullpath = args['RAW_BUCKET_PATH']
+
+trusted_bucket = args['TRUSTED_BUCKET_PATH']
+trusted_folder = args['TRUSTED_SUBFOLDER']
+truested_fullpath = trusted_bucket + "/" + trusted_folder + "/"
+
+#raw_bucket_filefullpath = "s3://bucket-galdinoigor-firstgluejob-dev-raw-data/international_matches.csv"
+#trusted_bucket = "s3://bucket-galdinoigor-firstgluejob-dev-trusted-data/brazil-wins/"
 
 df_int_matches = spark.read \
     .option("header", "true") \
@@ -35,6 +44,6 @@ df_brazil_grouped_wins = df_brazil_matches.groupBy("year").agg(
 df_brazil_grouped_wins.write \
     .mode("overwrite") \
     .option("header", True) \
-    .csv(trusted_bucket)
+    .csv(truested_fullpath)
 
 job.commit()

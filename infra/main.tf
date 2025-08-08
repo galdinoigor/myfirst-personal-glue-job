@@ -20,6 +20,12 @@ resource "aws_glue_job" "glue_job" {
     python_version  = "3"
   }
 
+  default_arguments = {
+    "--RAW_BUCKET_PATH"     = "${var.raw_data_bucket_name}/${var.raw_file_name}"
+    "--TRUSTED_BUCKET_PATH" = var.trusted_data_bucket_name
+    "--TRUSTED_SUBFOLDER"   = var.trusted_folder_name
+  }
+
   glue_version      = "4.0"
   number_of_workers = 2
   worker_type       = "G.1X"

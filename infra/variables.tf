@@ -3,8 +3,18 @@ variable "raw_data_bucket_name" {
     type = string
 }
 
+variable "raw_file_name" {
+    description = "RAW CSV File name"
+    type = string
+}
+
 variable "trusted_data_bucket_name" {
     description = "Bucket for TRUSTED data file (target)"
+    type = string
+}
+
+variable "trusted_folder_name" {
+    description = "Subfolder from trusted bucket"
     type = string
 }
 
